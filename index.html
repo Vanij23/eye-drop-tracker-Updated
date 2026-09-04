@@ -224,9 +224,9 @@ const SETTINGS_KEY = 'eyeDropTracker.settings.v1';
 const PREF_KEY = 'eyeDropTracker.prefs.v2';
 
 const MEDS = [
-  { key:'maxmoist', name:'MAXMOIST', nameMr:'मॅक्समॉइस्ट',
+ { key:'maxmoist', name:'MAXMOIST', nameMr:'मॅक्समॉइस्ट',
     subEn:'Sodium Hyaluronate Eye Drops 0.1% w/v', subMr:'सोडियम हायलुरोनेट डोळ्याचे थेंब ०.१% w/v',
-    duration:30, taper:false, freqOf:()=>2, defaultTimes:['08:00','20:00'] },
+    duration:30, taper:false, freqOf:()=>4, defaultTimes:['07:00','12:00','17:00','22:00'] },
  { key:'predforte', name:'PRED FORTE', nameMr:'प्रेड फोर्ट',
     subEn:'Prednisolone Acetate Ophthalmic Suspension', subMr:'प्रेडनिसोलोन एसीटेट नेत्र सस्पेंशन',
     duration:28, taper:true,
@@ -237,8 +237,7 @@ const MEDS = [
     duration:14, taper:false, freqOf:()=>2, defaultTimes:['08:00','20:00'] },
   { key:'micronac', name:'MICRONAC PF', nameMr:'मायक्रोनॅक पीएफ',
     subEn:'Nepafenac Ophthalmic Suspension', subMr:'नेपाफेनॅक नेत्र सस्पेंशन',
-    duration:45, taper:false, freqOf:()=>4, defaultTimes:['07:00','12:00','17:00','22:00'] }
-];
+    duration:45, taper:false, freqOf:()=>2, defaultTimes:['08:00','20:00'] }
 const TAPER_STAGES = [
   {fromDay:1, toDay:7, freq:4}, {fromDay:8, toDay:14, freq:3},
   {fromDay:15, toDay:21, freq:2}, {fromDay:22, toDay:28, freq:1}
