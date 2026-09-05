@@ -197,6 +197,9 @@
   .sync-badge.synced{ background:var(--success-soft); color:var(--success); }
   .sync-badge.offline{ background:var(--pending-track); color:var(--ink-soft); }
   .sync-badge:empty{ display:none; }
+
+  .hf-tab.active{ background:var(--eye-color, var(--navy)); color:#fff; }
+  .eye-tabs-sticky{ position:sticky; top:0; z-index:6; background:var(--bg); margin:0 -16px; padding:8px 16px 10px; }
 </style>
 </head>
 <body>
@@ -636,9 +639,11 @@ function renderToday(){
       <div class="overall-num">${num(overallGiven)} / ${num(overallTotal)} ${t('given')}</div>
       <div class="bar-track"><div class="bar-fill" style="width:${overallPct}%"></div></div>
     </div>
-    <div class="hist-filter-tabs">
-      <div class="hf-tab ${selectedEye==='R'?'active':''}" data-eye="R" style="--eye-color:var(--accent-blue)">\uD83D\uDC41\uFE0F ${t('rightEyeTab')}</div>
-      <div class="hf-tab ${selectedEye==='L'?'active':''}" data-eye="L" style="--eye-color:var(--accent)">\uD83D\uDC41\uFE0F ${t('leftEyeTab')}</div>
+        <div class="eye-tabs-sticky">
+      <div class="hist-filter-tabs" style="margin-bottom:0;">
+        <div class="hf-tab ${selectedEye==='R'?'active':''}" data-eye="R" style="--eye-color:var(--accent-blue)">\uD83D\uDC41\uFE0F ${t('rightEyeTab')}</div>
+        <div class="hf-tab ${selectedEye==='L'?'active':''}" data-eye="L" style="--eye-color:var(--accent)">\uD83D\uDC41\uFE0F ${t('leftEyeTab')}</div>
+      </div>
     </div>
     ${selectedEye==='R' ? renderEyeSection(EYES[0], viewDate, statsR) : renderEyeSection(EYES[1], viewDate, statsL)}
     <div class="patient-tag">${t('patientName')}</div>
